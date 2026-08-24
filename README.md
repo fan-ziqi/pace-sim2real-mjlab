@@ -30,7 +30,7 @@ The task uses the official simplified ANYmal-D URDF from ANYbotics.  Visual
 Collada meshes are intentionally stripped at load time: PACE fitting uses the
 official collision and inertial model, while remaining self-contained and
 independent of ROS mesh resolution.  See the bundled
-[`source/pace_sim2real/pace_sim2real/assets/anymal_d/LICENSE`](source/pace_sim2real/pace_sim2real/assets/anymal_d/LICENSE)
+[`src/pace_sim2real/assets/anymal_d/LICENSE`](src/pace_sim2real/assets/anymal_d/LICENSE)
 for its BSD-3-Clause terms.
 
 ## Installation
@@ -139,8 +139,8 @@ checkpoints or TensorBoard events.
 ## Verification
 
 ```bash
-uv run ruff check source/pace_sim2real scripts tests
-uv run ruff format --check source/pace_sim2real scripts tests
+uv run ruff check src scripts tests
+uv run ruff format --check src scripts tests
 uv run pytest
 uv run python scripts/list_envs.py
 ```

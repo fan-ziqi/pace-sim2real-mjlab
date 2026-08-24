@@ -25,8 +25,8 @@ jobs:
       - uses: astral-sh/setup-uv@v5
       - run: sudo apt-get update && sudo apt-get install -y libosmesa6 libgl1
       - run: uv sync --group dev --group docs --frozen
-      - run: uv run ruff format --check source/pace_sim2real scripts tests
-      - run: uv run ruff check source/pace_sim2real scripts tests
+      - run: uv run ruff format --check src scripts tests
+      - run: uv run ruff check src scripts tests
       # GitHub-hosted runners have no NVIDIA driver.  Test the public Python
       # surface with the matching CPU wheel; the lock above still validates the
       # supported CUDA environment used by mjlab and real PACE fitting.
