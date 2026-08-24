@@ -141,10 +141,20 @@ uv run pytest
 uv run python scripts/list_envs.py
 ```
 
-The physical integration test always runs once on CPU and additionally runs on
-CUDA when available. It creates the real ANYmal-D mjlab environment, sets
-distinct per-world PACE parameters, steps it, and verifies encoder-bias, delay,
-candidate-isolation, and legacy optimizer-binding semantics.
+The physical integration test runs once on CPU and additionally runs on CUDA
+when available. It creates the real ANYmal-D mjlab environment, sets distinct
+per-world PACE parameters, steps it, and verifies encoder-bias, delay,
+candidate-isolation, and legacy optimizer-binding semantics. Run it explicitly
+on a machine with the mjlab runtime:
+
+```bash
+uv run pytest -q tests/test_mjlab_integration.py
+```
+
+The hosted GitHub workflow uses Python 3.10 and a CPU PyTorch wheel for its
+static and public-API tests because GitHub-hosted runners have no NVIDIA
+driver. A GPU-capable development machine remains required for the physical
+integration test and a meaningful fitting run.
 
 ## Documentation
 

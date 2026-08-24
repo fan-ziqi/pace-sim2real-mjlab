@@ -16,10 +16,21 @@ jobs:
       PYOPENGL_PLATFORM: osmesa
     steps:
       - uses: actions/checkout@v4
+      # mjlab's CUDA distribution is the supported runtime.  Python 3.10 is
+      # also the version used by the project integration suite; newer hosted
+      # Python images can load Triton before a CUDA driver is present.
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
       - uses: astral-sh/setup-uv@v5
       - run: sudo apt-get update && sudo apt-get install -y libosmesa6 libgl1
       - run: uv sync --group dev --group docs --frozen
       - run: uv run ruff format --check source/pace_sim2real scripts tests
       - run: uv run ruff check source/pace_sim2real scripts tests
-      - run: uv run pytest -q
-      - run: uv run mkdocs build --strict --site-dir site
+      # GitHub-hosted runners have no NVIDIA driver.  Test the public Python
+      # surface with the matching CPU wheel; the lock above still validates the
+      # supported CUDA environment used by mjlab and real PACE fitting.
+      - run: uv pip install --reinstall --no-deps --index-url https://download.pytorch.org/whl/cpu "torch==2.13.0+cpu" "torchvision==0.28.0+cpu"
+      - run: uv pip uninstall triton
+      - run: uv run --no-sync pytest -q --ignore=tests/test_mjlab_integration.py
+      - run: uv run --no-sync mkdocs build --strict --site-dir site
