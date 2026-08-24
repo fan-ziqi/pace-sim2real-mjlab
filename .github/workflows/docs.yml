@@ -20,7 +20,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: astral-sh/setup-uv@v5
-      - run: uv sync --group docs --frozen
+      - run: uv sync --only-group docs --no-install-project --frozen
       - run: uv run mkdocs build --strict --site-dir site
       - uses: actions/upload-pages-artifact@v3
         with:
