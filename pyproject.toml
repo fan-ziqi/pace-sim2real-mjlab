@@ -29,8 +29,10 @@ dependencies = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/leggedrobotics/pace-sim2real"
-Source = "https://github.com/leggedrobotics/pace-sim2real"
+Homepage = "https://fan-ziqi.github.io/pace-sim2real-mjlab/"
+Documentation = "https://fan-ziqi.github.io/pace-sim2real-mjlab/"
+Source = "https://github.com/fan-ziqi/pace-sim2real-mjlab"
+Upstream = "https://github.com/leggedrobotics/pace-sim2real"
 
 [project.scripts]
 pace-data-collection = "pace_sim2real.scripts.data_collection:main"
