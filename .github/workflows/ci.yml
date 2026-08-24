@@ -11,6 +11,9 @@ permissions:
 jobs:
   quality:
     runs-on: ubuntu-latest
+    env:
+      MUJOCO_GL: egl
+      PYOPENGL_PLATFORM: egl
     steps:
       - uses: actions/checkout@v4
       - uses: astral-sh/setup-uv@v5
