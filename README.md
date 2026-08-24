@@ -1,5 +1,9 @@
 # ⚙️ PACE — Sim-to-Real Transfer for Legged Robots (mjlab)
 
+> ⚠️ **Experimental project: this project has not been fully tested.** If you
+> encounter a problem, please [open an issue](https://github.com/fan-ziqi/pace-sim2real-mjlab/issues/new)
+> or [submit a pull request](https://github.com/fan-ziqi/pace-sim2real-mjlab/pulls).
+
 This repository ports [PACE Sim2Real](https://github.com/leggedrobotics/pace-sim2real)
 from Isaac Lab to **mjlab / MuJoCo-Warp**.  It preserves PACE's package name,
 ANYmal-D task ID, script locations, data format, CMA-ES log format, and public
