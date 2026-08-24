@@ -12,11 +12,12 @@ jobs:
   quality:
     runs-on: ubuntu-latest
     env:
-      MUJOCO_GL: egl
-      PYOPENGL_PLATFORM: egl
+      MUJOCO_GL: osmesa
+      PYOPENGL_PLATFORM: osmesa
     steps:
       - uses: actions/checkout@v4
       - uses: astral-sh/setup-uv@v5
+      - run: sudo apt-get update && sudo apt-get install -y libosmesa6 libgl1
       - run: uv sync --group dev --group docs --frozen
       - run: uv run ruff format --check source/pace_sim2real scripts tests
       - run: uv run ruff check source/pace_sim2real scripts tests
