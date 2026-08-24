@@ -1,6 +1,16 @@
-PACE
+PACE Sim2Real for mjlab
+Copyright 2026 Ziqi Fan
 
+The mjlab port and its documentation are licensed under the Apache License,
+Version 2.0. See LICENSE for the complete license text.
+
+Upstream PACE Sim2Real
 Copyright 2025 ETH Zurich, Robotic Systems Lab, Filip Bjelonic
 
-This product is licensed under the Apache License, Version 2.0.
-See the LICENSE file for details.
+The upstream PACE Sim2Real code retained in this derivative work is licensed
+under the Apache License, Version 2.0. Its original attribution is preserved
+verbatim in LICENSES/UPSTREAM-PACE-NOTICE.txt.
+
+The embedded simplified ANYmal-D description is Copyright 2023 ANYbotics AG
+and remains BSD 3-Clause; see
+source/pace_sim2real/pace_sim2real/assets/anymal_d/LICENSE.

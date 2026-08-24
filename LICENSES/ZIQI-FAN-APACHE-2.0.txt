@@ -1,0 +1,10 @@
+PACE Sim2Real for mjlab
+
+Copyright 2026 Ziqi Fan
+
+The mjlab port, including the port-specific source code and documentation, is
+licensed under the Apache License, Version 2.0. The complete license text is
+provided at the repository root in LICENSE.
+
+This notice is additional attribution and does not alter the Apache License
+terms or the retained upstream PACE Sim2Real notices.

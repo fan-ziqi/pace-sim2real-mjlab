@@ -164,5 +164,9 @@ Build it locally with `uv run --group docs mkdocs build --strict`.
 
 ## License
 
-PACE source is Apache-2.0; see [LICENSE](LICENSE).  The embedded simplified
-ANYmal-D description is separately BSD-3-Clause and credited above.
+This mjlab port is © 2026 Ziqi Fan and licensed under Apache-2.0; see
+[LICENSE](LICENSE). The original PACE Sim2Real © 2025 ETH Zurich, Robotic
+Systems Lab, Filip Bjelonic remains Apache-2.0, with its attribution retained
+in [LICENSES/UPSTREAM-PACE-NOTICE.txt](LICENSES/UPSTREAM-PACE-NOTICE.txt).
+The embedded simplified ANYmal-D description is separately BSD-3-Clause and
+credited above. See the [full attribution guide](docs/legal.md).

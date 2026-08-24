@@ -9,9 +9,13 @@ description = "PACE sim-to-real system identification for legged robots, powered
 readme = "README.md"
 requires-python = ">=3.10,<3.14"
 license = "Apache-2.0"
-license-files = ["LICENSE", "NOTICE"]
+license-files = ["LICENSE", "NOTICE", "LICENSES/*.txt"]
 authors = [
+  { name = "Ziqi Fan" },
   { name = "ETH Zurich, Robotic Systems Lab" },
+]
+maintainers = [
+  { name = "Ziqi Fan" },
 ]
 keywords = ["mjlab", "mujoco", "sim2real", "system-identification", "cma-es", "pace"]
 classifiers = [
