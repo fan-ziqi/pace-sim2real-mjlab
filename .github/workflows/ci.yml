@@ -1,0 +1,21 @@
+name: Verify
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+      - run: uv sync --group dev --group docs --frozen
+      - run: uv run ruff format --check source/pace_sim2real scripts tests
+      - run: uv run ruff check source/pace_sim2real scripts tests
+      - run: uv run pytest -q
+      - run: uv run mkdocs build --strict --site-dir site
