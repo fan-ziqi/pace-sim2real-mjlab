@@ -1,0 +1,25 @@
+site_name: PACE Sim2Real (mjlab)
+site_url: https://fan-ziqi.github.io/pace-sim2real-mjlab/
+repo_url: https://github.com/fan-ziqi/pace-sim2real-mjlab
+repo_name: fan-ziqi/pace-sim2real-mjlab
+theme:
+  name: material
+nav:
+  - Home: index.md
+  - Installation: installation.md
+  - Examples:
+      - Overview: examples/index.md
+      - ANYmal-D: examples/anymal.md
+  - Guides:
+      - Usage and real data: usage.md
+      - Custom robot: tutorials/basics.md
+      - Advanced optimization: tutorials/advanced.md
+      - Best practices: tutorials/best_practice.md
+      - Training and playback: training.md
+  - Concepts:
+      - Actuators: concepts/actuators.md
+      - Simulation mapping: simulation.md
+  - API:
+      - Importing: importing.md
+      - Optimizer: api/optim.md
+  - Real world: real-world.md
