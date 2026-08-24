@@ -1,5 +1,9 @@
 # ⚙️ PACE — Sim-to-Real Transfer for Legged Robots (mjlab)
 
+![License](https://img.shields.io/badge/license-Apache%202.0-blue)
+![Python](https://img.shields.io/badge/python-3.10%2B-green)
+![Status](https://img.shields.io/badge/status-experimental-orange)
+
 > ⚠️ **Experimental project: this project has not been fully tested.** If you
 > encounter a problem, please [open an issue](https://github.com/fan-ziqi/pace-sim2real-mjlab/issues/new)
 > or [submit a pull request](https://github.com/fan-ziqi/pace-sim2real-mjlab/pulls).
@@ -14,6 +18,21 @@ PACE (Precise Adaptation through Continuous Evolution) identifies actuator and
 joint dynamics from excitation data.  The standard ANYmal-D task fits, per
 joint, armature, passive viscous damping, Coulomb friction, encoder bias, and a
 fixed command delay.
+
+## What is PACE?
+
+PACE (Precise Adaptation through Continuous Evolution) is a framework for
+sim-to-real transfer of robotic systems. It bridges simulation and real hardware
+by:
+
+- estimating actuator and joint dynamics from measured excitation data;
+- using CMA-ES to optimize physically meaningful model parameters; and
+- applying the learned model to improve simulation fidelity before policy
+  transfer.
+
+The upstream project is designed for diverse robot platforms and actuator
+types. This port provides the upstream ANYmal-D workflow and mjlab-native
+extension points for custom robots and actuators.
 
 ## What is compatible
 
@@ -165,6 +184,46 @@ integration test and a meaningful fitting run.
 The rendered guide is published at
 [fan-ziqi.github.io/pace-sim2real-mjlab](https://fan-ziqi.github.io/pace-sim2real-mjlab/).
 Build it locally with `uv run --group docs mkdocs build --strict`.
+
+## Contributing and feedback
+
+Bug reports, documentation improvements, custom robot examples, and core PACE
+improvements are welcome. For a substantial API or robot-integration change,
+open an [issue](https://github.com/fan-ziqi/pace-sim2real-mjlab/issues/new)
+first. Follow the [contribution guide](CONTRIBUTING.md) for the `uv` development
+setup, checks to run before a pull request, and the information needed in a bug
+report.
+
+## Upstream maintainers and acknowledgements
+
+This port retains the upstream PACE project's contributor attribution. The
+original project is maintained by Filip Bjelonic, René Zurbrügg, and Oliver
+Fischer at ETH Zurich's Robotic Systems Lab. The upstream authors thank the RSL
+Learning Group, Konrad, Matthias, Zichong, Stephan, Efe, Yuntao, René, Clemens,
+Ryo, Alexander, Fabio, Oliver Fischer, René Zurbrügg, and the early testers
+Oliver, Clemens, and Yasmine for their technical input, use of PACE, and
+feedback.
+
+## How to cite the upstream PACE work
+
+If you use PACE Sim2Real in research, please cite the
+[upstream paper](https://arxiv.org/pdf/2509.06342):
+
+> F. Bjelonic, F. Tischhauser, and M. Hutter, *Towards Bridging the Gap:
+> Systematic Sim-to-Real Transfer for Diverse Legged Robots*, arXiv:2509.06342,
+> 2025.
+
+```bibtex
+@article{bjelonic2025towards,
+  title         = {Towards Bridging the Gap: Systematic Sim-to-Real Transfer for Diverse Legged Robots},
+  author        = {Bjelonic, Filip and Tischhauser, Fabian and Hutter, Marco},
+  journal       = {arXiv preprint arXiv:2509.06342},
+  year          = {2025},
+  eprint        = {2509.06342},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.RO},
+}
+```
 
 ## License
 
