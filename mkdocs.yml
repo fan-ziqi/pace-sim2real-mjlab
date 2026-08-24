@@ -24,3 +24,4 @@ nav:
       - Optimizer: api/optim.md
   - Real world: real-world.md
   - License and attribution: legal.md
+  - Upstream PACE (Isaac Lab): https://github.com/leggedrobotics/pace-sim2real
