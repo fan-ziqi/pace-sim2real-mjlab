@@ -49,6 +49,11 @@ docs = [
   "mkdocs-material>=9.6",
 ]
 
+[[tool.uv.index]]
+name = "pypi"
+url = "https://pypi.org/simple"
+default = true
+
 [tool.setuptools]
 package-dir = {"" = "source/pace_sim2real"}
 include-package-data = true
